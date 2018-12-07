@@ -1,17 +1,4 @@
-terraform {
-  backend "s3" {
-    bucket  = "teraform-up-and-running-arcones-state"
-    region  = "eu-central-1"
-    encrypt = true
-    key     = "stage/services/data-stores/mysql/terraform.tfstate"
-  }
-}
-
-provider "aws" {
-  region = "eu-central-1"
-}
-
 module "mysql" {
-  source      = "../../../../modules/services/data-stores/mysql"
+  source      = "git::git@github.com:arcones/terraformUpAndRunningModules.git//services//data-stores/mysql?ref=0.0.1"
   db_password = "${var.db_password}"
 }

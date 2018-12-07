@@ -1,4 +1,4 @@
-# Terraform Up & Running - Live repo
+# Terraform Up & Running - Live
 
 This project contains the exercises proposed in Terraform Up & Running book (O'Reilly - Brikman).
 

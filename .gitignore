@@ -1,13 +1,7 @@
-# Local .terraform directories
-**/.terraform/*
-
-# .tfstate files
-*.tfstate
-*.tfstate.*
-
-# Crash log files
-crash.log
-
 credentials.csv
-
+.terraform
+*.tfstate
+*.tfstate.backup
+*.sublime*
 .idea
+.terraform.tfstate.lock.info
