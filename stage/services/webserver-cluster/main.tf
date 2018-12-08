@@ -19,6 +19,7 @@ module "webserver_cluster" {
   enable_autoscaling            = true
   alicia_cloudwatch_full_access = true
   user_names                    = ["${data.terraform_remote_state.global_state.user_names}"]
+  enable_new_user_data          = true
 }
 
 resource "aws_security_group_rule" "allow_testing_inbound_elb" {

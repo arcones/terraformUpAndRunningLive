@@ -19,4 +19,5 @@ module "webserver_cluster" {
   enable_autoscaling            = false
   alicia_cloudwatch_full_access = false
   user_names                    = "${data.terraform_remote_state.global_state.user_names}"
+  enable_new_user_data          = false
 }

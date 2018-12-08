@@ -18,7 +18,7 @@ resource "aws_iam_user" "users" {
 data "aws_iam_policy_document" "ec2_read_only" {
   statement {
     effect    = "Allow"
-    actions   = ["ec2:Describe"]
+    actions   = ["ec2:Read*, ec2:List*"]
     resources = ["*"]
   }
 }
