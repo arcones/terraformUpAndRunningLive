@@ -1,17 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket  = "teraform-up-and-running-arcones-state"
-    region  = "eu-central-1"
-    key     = "global/s3/terraform.tfstate"
-    encrypt = true
-  }
-}
-
-provider "aws" {
-  profile = "explorationAccount"
-  region  = "eu-central-1"
-}
-
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "teraform-up-and-running-arcones-state"
 
@@ -22,4 +8,28 @@ resource "aws_s3_bucket" "terraform_state" {
   lifecycle {
     prevent_destroy = true
   }
+}
+
+resource "aws_iam_user" "users" {
+  count = "${length(var.user_names)}"
+  name  = "${element(var.user_names,count.index)}"
+}
+
+data "aws_iam_policy_document" "ec2_read_only" {
+  statement {
+    effect    = "Allow"
+    actions   = ["ec2:Describe"]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_policy" "ec2_read_only" {
+  name   = "ec2-read-only"
+  policy = "${data.aws_iam_policy_document.ec2_read_only.json}"
+}
+
+resource "aws_iam_policy_attachment" "ec2_access_for_users" {
+  name       = "EC2 read only access for users"
+  users      = ["${aws_iam_user.users.*.name}"]
+  policy_arn = "${aws_iam_policy.ec2_read_only.arn}"
 }
