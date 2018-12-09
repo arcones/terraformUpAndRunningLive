@@ -6,3 +6,4 @@ credentials.csv
 .terraform.tfstate.lock.info
 .terraform
 *.iml
+services/database/database.auto.tfvars
