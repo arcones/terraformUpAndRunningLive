@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "teraform-up-and-running-arcones-state"
+  bucket = "terraform-up-and-running-state"
 
   versioning {
     enabled = true

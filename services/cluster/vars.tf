@@ -1,0 +1,10 @@
+variable "cluster_name" {}
+variable "db_remote_state_bucket" {}
+variable "db_remote_state_key" {}
+variable "instance_type" {}
+variable "min_size" {}
+variable "max_size" {}
+variable "enable_autoscaling" {}
+variable "alicia_cloudwatch_full_access" {}
+variable "enable_new_user_data" {}
+variable "open_testing_port" {}

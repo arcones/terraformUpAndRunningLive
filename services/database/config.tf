@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket  = "teraform-up-and-running-arcones-state"
+    bucket  = "terraform-up-and-running-state"
     region  = "eu-central-1"
     encrypt = true
-    key     = "stage/services/data-stores/mysql/terraform.tfstate"
+    key     = "dev/services/database/terraform.tfstate"
   }
 }
 
