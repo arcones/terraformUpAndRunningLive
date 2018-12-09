@@ -2,7 +2,7 @@ data "terraform_remote_state" "global_state" {
   backend = "s3"
 
   config {
-    bucket = "terraform-up-and-running-state"
+    bucket = "tf-arcones-state"
     key    = "global/s3/terraform.tfstate"
     region = "eu-central-1"
   }

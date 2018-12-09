@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-up-and-running-state"
+  bucket =    "tf-arcones-state"
 
   versioning {
     enabled = true
@@ -18,7 +18,7 @@ resource "aws_iam_user" "users" {
 data "aws_iam_policy_document" "ec2_read_only" {
   statement {
     effect    = "Allow"
-    actions   = ["ec2:Read*, ec2:List*"]
+    actions   = ["ec2:Read*" , "ec2:List*"]
     resources = ["*"]
   }
 }

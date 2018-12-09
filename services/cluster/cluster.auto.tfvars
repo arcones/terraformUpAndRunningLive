@@ -1,5 +1,5 @@
 cluster_name = "webservers-dev"
-db_remote_state_bucket  = "terraform-up-and-running-state"
+db_remote_state_bucket  = "tf-arcones-state"
 db_remote_state_key = "dev/services/database/terraform.tfstate"
 instance_type = "t2.micro"
 min_size = 2
