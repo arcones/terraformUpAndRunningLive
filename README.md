@@ -52,7 +52,3 @@ Go to any of the [services](services)' subfolders and run the standard terraform
 ## Tests
 
 The [cluster](services/cluster) will output the load balancer URL when finishes its ```terraform apply``` command. This URL should return a 200 HTTP response code and the content of the index.html file created by one of the scripts contained in [this folder of modules repo](https://github.com/arcones/terraformUpAndRunningModules/tree/master/services/cluster/asg)
-
-## TODOs
-
-- It seems like the cluster returns the same website whether in prod or in dev. The data should be different in each environment, so investigate and fix it.
